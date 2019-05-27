@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Usuario</th>
+          <th>Correo</th>
+          <th>Telefono</th>
+          <th>Ver</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let us of usuarios">
+          <td>{{us.usuario}}</td>
+          <td>{{us.correo}}</td>
+          <td>{{us.telefono}}</td>
+          <td><a routerLink="/usuario/{{us.id}}" routerLinkActive="active-link" class="btn btn-success">Ver</a></td>
+          <td><a (click)="eliminarUsuario(us.id)" class="btn btn-danger">Eliminar</a></td>  
+        </tr>
+      </tbody>
+    </table>
+</div>

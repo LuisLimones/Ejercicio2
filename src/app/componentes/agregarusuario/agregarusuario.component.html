@@ -1,0 +1,66 @@
+<div class="container border">
+  <h3>Introduzca Los Datos</h3>
+  <form (ngSubmit)="submitAgregar()" #usuarioForm="ngForm">
+      <div class="form-group">
+          <label for="usuario">Nombre De Usuario</label>
+          <input type="text" class="form-control" id="usuario" required [(ngModel)]="user.usuario"
+          name="usuario" #usuario="ngModel">
+          <div [hidden]="usuario.valid || usuario.pristine" class="alert alert-danger">
+              Introduzca El Nombre De Usuario Por Favor
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="calle">Calle</label>
+        <input type="text" class="form-control" id="calle" required [(ngModel)]="user.calle"
+        name="calle" #calle="ngModel">
+        <div [hidden]="calle.valid || calle.pristine" class="alert alert-danger">
+            Introduzca La Calle Por Favor
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="colonia">Colonia</label>
+        <input type="text" class="form-control" id="colonia" required [(ngModel)]="user.colonia"
+        name="colonia" #colonia="ngModel">
+        <div [hidden]="colonia.valid || colonia.pristine" class="alert alert-danger">
+            Introduzca La Colonia Por Favor
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="numero">Numero De Casa</label>
+        <input type="text" class="form-control" id="numero" required [(ngModel)]="user.numero"
+        name="numero" #numero="ngModel">
+        <div [hidden]="numero.valid || numero.pristine" class="alert alert-danger">
+            Introduzca El Numero De Casa Por Favor
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo Electronico</label>
+        <input type="text" class="form-control" id="correo" required email [(ngModel)]="user.correo"
+        name="correo" #correo="ngModel">
+        <div [hidden]="correo.valid || correo.pristine" class="alert alert-danger">
+            Introduzca Un Correo Con Formato Correcto (Ejemplo: xxxxxx@xxx.com)
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Telefono</label>
+        <input type="text" class="form-control" id="telefono" required [(ngModel)]="user.telefono"
+        name="telefono" #telefono="ngModel">
+        <div [hidden]="telefono.valid || telefono.pristine" class="alert alert-danger">
+            Introduzca El Numero De Telefono Por Favor
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="imagenes">Ingrese La Direccion De La Imagen Por Favor</label>
+        <br>
+        <a href="https://picsum.photos/images" target="_blank">Fotos</a>
+        <input type="text" class="form-control" id="imagen" required [(ngModel)]="user.imagen"
+        name="imagen" #imagen="ngModel">
+        <div [hidden]="imagen.valid || imagen.pristine" class="alert alert-danger">
+            Introduzca La Direccion De La Imagen Por Favor
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!usuarioForm.form.valid">
+        Agregar
+      </button>
+  </form>
+</div>
