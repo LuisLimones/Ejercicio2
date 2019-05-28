@@ -6,7 +6,8 @@ import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado
 import { DetalleUsuarioComponent } from './componentes/detalle-usuario/detalle-usuario.component';
 
 const routes: Routes = [
-  {path: '', component: VerusuarioComponent},
+  {path: '', redirectTo: '/usuarios', pathMatch: 'full'},
+  {path: 'usuarios', component: VerusuarioComponent},
   {path: 'agregar', component: AgregarusuarioComponent},
   {path: 'usuario/:id', component: DetalleUsuarioComponent},
   {path: '**', component: NoEncontradoComponent}

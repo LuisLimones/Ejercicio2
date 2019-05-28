@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AgregarusuarioComponent implements OnInit {
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   user: Usuario={
     id: null,
@@ -22,12 +22,13 @@ export class AgregarusuarioComponent implements OnInit {
     telefono: null,
     imagen: null
   };
-  _router: Router;
 
   ngOnInit() {
   }
 
   submitAgregar(){
     this.usuarioService.postUsuario(this.user).subscribe();
+    this.router.navigateByUrl('#');
+    alert("Usuario agregado");
   }
 }
