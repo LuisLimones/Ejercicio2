@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { Router, ActivatedRoute} from '@angular/router';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { Usuario } from '../../clases/usuario';
 
@@ -11,8 +10,7 @@ import { Usuario } from '../../clases/usuario';
 })
 export class DetalleUsuarioComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router,
-     private usuarioService: UsuarioService) { }
+  constructor(private route: ActivatedRoute, private usuarioService: UsuarioService) { }
 
   usuario: Usuario;
   id: string;

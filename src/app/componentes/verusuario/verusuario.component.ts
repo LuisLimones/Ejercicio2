@@ -19,8 +19,7 @@ export class VerusuarioComponent implements OnInit {
   }
   
   getUsuarios(){
-    this.usuarioService.getUsuarios().subscribe(usuarios => this.usuarios=usuarios)
-    ,(error)=>{console.log('ocurrio un error', error)};
+    this.usuarioService.getUsuarios().subscribe(usuarios => this.usuarios=usuarios);
   }
   
   eliminarUsuario(id){
