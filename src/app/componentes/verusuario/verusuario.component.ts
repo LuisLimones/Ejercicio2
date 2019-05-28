@@ -19,8 +19,10 @@ export class VerusuarioComponent implements OnInit {
   }
   
   getUsuarios(){
-    this.usuarioService.getUsuarios().subscribe(usuarios => this.usuarios=usuarios);
+    this.usuarioService.getUsuarios().subscribe(usuarios => this.usuarios=usuarios)
+    ,(error)=>{console.log('ocurrio un error', error)};
   }
+  
   eliminarUsuario(id){
     console.log("Llega metodo "+id);
     this.usuarioService.deleteUsuario(id).subscribe();
